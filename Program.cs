@@ -77,6 +77,7 @@ int MinRowSum(int[,] matrix)
     int cols = matrix.GetLength(1);
     int sum;
     int minSum = 0;
+    int minSumRow = 0;
     for (int i = 0; i < rows; i++)
     {
         sum = 0;
@@ -86,13 +87,16 @@ int MinRowSum(int[,] matrix)
         if (i == 0)
             minSum = sum;
         if (sum < minSum)
+        {
             minSum = sum;
+            minSumRow = i;
+        }
     }
-    return minSum;
+    return minSumRow+1;
 }
 int[,] newArr2 = new int[4, 3];
 InitRandomIntMatrix(newArr2);
 Console.WriteLine();
 PrintIntMatrix(newArr2);
 
-Console.WriteLine("Min summ = " + MinRowSum(newArr2));
+Console.WriteLine(MinRowSum(newArr2) + " строка");
