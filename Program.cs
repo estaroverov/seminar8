@@ -53,7 +53,7 @@ void SortRows(int[,] matrix)
     {
         for (int j = 0; j < cols; j++)
             for (int k = 0; k < cols - 1; k++)
-                if (matrix[i, k] < matrix[i, k+1])
+                if (matrix[i, k] < matrix[i, k + 1])
                 {
                     tmp = matrix[i, k];
                     matrix[i, k] = matrix[i, k + 1];
@@ -62,11 +62,37 @@ void SortRows(int[,] matrix)
     }
 }
 
-int[,] newArr = new int[3, 4];
+int[,] newArr = new int[4, 3];
 InitRandomIntMatrix(newArr);
 PrintIntMatrix(newArr);
 SortRows(newArr);
 Console.WriteLine();
 PrintIntMatrix(newArr);
 
+// Задача 56: Задайте прямоугольный двумерный массив. 
+// Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+int MinRowSum(int[,] matrix)
+{
+    int rows = matrix.GetLength(0);
+    int cols = matrix.GetLength(1);
+    int sum;
+    int minSum = 0;
+    for (int i = 0; i < rows; i++)
+    {
+        sum = 0;
+        for (int j = 0; j < cols; j++)
+            sum += matrix[i, j];
 
+        if (i == 0)
+            minSum = sum;
+        if (sum < minSum)
+            minSum = sum;
+    }
+    return minSum;
+}
+int[,] newArr2 = new int[4, 3];
+InitRandomIntMatrix(newArr2);
+Console.WriteLine();
+PrintIntMatrix(newArr2);
+
+Console.WriteLine("Min summ = " + MinRowSum(newArr2));
