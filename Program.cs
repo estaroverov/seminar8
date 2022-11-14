@@ -137,7 +137,7 @@ PrintIntMatrix(MultMatrix(newArr3, newArr4));
 // Напишите программу, которая будет построчно выводить массив, 
 // добавляя индексы каждого элемента.
 int[,,] array = new int[2, 2, 2];
-void Init3dArray(int[,,] array, int min = 0, int max = 100)
+void Init3dArray(int[,,] array, int min = 10, int max = 100)
 {
     int size = array.GetLength(0) * array.GetLength(1) * array.GetLength(2);
     int tempVal;
