@@ -41,6 +41,18 @@ void PrintIntMatrix(int[,] matrix)
     }
 }
 
+void PrintStrMatrix(string [,] matrix)
+{
+    int rows = matrix.GetLength(0);
+    int cols = matrix.GetLength(1);
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+            Console.Write(matrix[i, j] + " ");
+        Console.WriteLine();
+    }
+}
+
 //Задача 54: Задайте двумерный массив. Напишите программу, 
 // которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
@@ -182,11 +194,39 @@ void Print3dArray(int[,,] array)
             {
                 Console.Write(array[i, j, k] + $"({i},{j},{k})");
             }
-            
+            Console.WriteLine();
         }
-        Console.WriteLine();
     }
 }
 
 Init3dArray(array);
 Print3dArray(array);
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+
+string[,] SpiralArray(int rows = 4, int cols = 4)
+{
+    string[,] spiralArr = new string[rows, cols];
+    int size = rows * cols;
+    int counter = 0;
+    int n = 0;
+    while (counter < size)
+    {
+        for (int j = n; j < cols - n; j++)
+            spiralArr[n, j] = counter < 9 ? "0" + ++counter : "" + ++counter;
+
+        for (int j = n + 1; j < rows - n; j++)
+            spiralArr[j, cols - n - 1] = counter < 9 ? "0" + ++counter : "" + ++counter;
+
+        for (int i = cols - n - 2; i >= n; i--)
+            spiralArr[rows - n - 1, i] = counter < 9 ? "0" + ++counter : "" + ++counter;
+
+        for (int i = rows - n - 2; i >= n + 1; i--)
+            spiralArr[i, n] = counter < 9 ? "0" + ++counter : "" + ++counter;
+
+        n++;
+    }
+    return spiralArr;
+}
+Console.WriteLine();
+PrintStrMatrix(SpiralArray());
