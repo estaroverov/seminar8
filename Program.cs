@@ -182,8 +182,9 @@ void Print3dArray(int[,,] array)
             {
                 Console.Write(array[i, j, k] + $"({i},{j},{k})");
             }
-            Console.WriteLine();
+            
         }
+        Console.WriteLine();
     }
 }
 
