@@ -90,7 +90,7 @@ int MinRowSum(int[,] matrix)
 }
 int[,] newArr2 = new int[4, 3];
 InitRandomIntMatrix(newArr2);
-Console.WriteLine("Задача 56.");
+Console.WriteLine("\nЗадача 56.");
 PrintIntMatrix(newArr2);
 
 Console.WriteLine(MinRowSum(newArr2) + " строка");
@@ -121,7 +121,7 @@ int[,] MultMatrix(int[,] matrix1, int[,] matrix2)
 
 int[,] newArr3 = new int[2, 2];
 int[,] newArr4 = new int[2, 2];
-Console.WriteLine("Задача 58.");
+Console.WriteLine("\nЗадача 58.");
 InitRandomIntMatrix(newArr3, 1, 10);
 InitRandomIntMatrix(newArr4, 1, 10);
 Console.WriteLine();
@@ -180,7 +180,7 @@ void Print3dArray(int[,,] array)
         }
     }
 }
-Console.WriteLine("Задача 60.");
+Console.WriteLine("\nЗадача 60.");
 Init3dArray(array);
 Print3dArray(array);
 
@@ -210,5 +210,5 @@ string[,] SpiralArray(int rows = 4, int cols = 4)
     }
     return spiralArr;
 }
-Console.WriteLine("Задача 62.");
+Console.WriteLine("\nЗадача 62.");
 PrintStrMatrix(SpiralArray());
