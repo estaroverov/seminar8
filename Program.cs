@@ -73,7 +73,7 @@ void SortRows(int[,] matrix)
                 }
     }
 }
-
+Console.WriteLine("Задача 54.");
 int[,] newArr = new int[4, 3];
 InitRandomIntMatrix(newArr);
 PrintIntMatrix(newArr);
@@ -108,7 +108,7 @@ int MinRowSum(int[,] matrix)
 }
 int[,] newArr2 = new int[4, 3];
 InitRandomIntMatrix(newArr2);
-Console.WriteLine();
+Console.WriteLine("Задача 56.");
 PrintIntMatrix(newArr2);
 
 Console.WriteLine(MinRowSum(newArr2) + " строка");
@@ -139,7 +139,7 @@ int[,] MultMatrix(int[,] matrix1, int[,] matrix2)
 
 int[,] newArr3 = new int[2, 2];
 int[,] newArr4 = new int[2, 2];
-Console.WriteLine();
+Console.WriteLine("Задача 58.");
 InitRandomIntMatrix(newArr3, 1, 10);
 InitRandomIntMatrix(newArr4, 1, 10);
 Console.WriteLine();
@@ -198,7 +198,7 @@ void Print3dArray(int[,,] array)
         }
     }
 }
-
+Console.WriteLine("Задача 60.");
 Init3dArray(array);
 Print3dArray(array);
 
@@ -209,24 +209,24 @@ string[,] SpiralArray(int rows = 4, int cols = 4)
     string[,] spiralArr = new string[rows, cols];
     int size = rows * cols;
     int counter = 0;
-    int n = 0;
+    int nStep = 0;
     while (counter < size)
     {
-        for (int j = n; j < cols - n; j++)
-            spiralArr[n, j] = counter < 9 ? "0" + ++counter : "" + ++counter;
+        for (int j = nStep; j < cols - nStep; j++)
+            spiralArr[nStep, j] = counter < 9 ? "0" + ++counter : "" + ++counter;
 
-        for (int j = n + 1; j < rows - n; j++)
-            spiralArr[j, cols - n - 1] = counter < 9 ? "0" + ++counter : "" + ++counter;
+        for (int j = nStep + 1; j < rows - nStep; j++)
+            spiralArr[j, cols - nStep - 1] = counter < 9 ? "0" + ++counter : "" + ++counter;
 
-        for (int i = cols - n - 2; i >= n; i--)
-            spiralArr[rows - n - 1, i] = counter < 9 ? "0" + ++counter : "" + ++counter;
+        for (int i = cols - nStep - 2; i >= nStep; i--)
+            spiralArr[rows - nStep - 1, i] = counter < 9 ? "0" + ++counter : "" + ++counter;
 
-        for (int i = rows - n - 2; i >= n + 1; i--)
-            spiralArr[i, n] = counter < 9 ? "0" + ++counter : "" + ++counter;
+        for (int i = rows - nStep - 2; i >= nStep + 1; i--)
+            spiralArr[i, nStep] = counter < 9 ? "0" + ++counter : "" + ++counter;
 
-        n++;
+        nStep++;
     }
     return spiralArr;
 }
-Console.WriteLine();
+Console.WriteLine("Задача 62.");
 PrintStrMatrix(SpiralArray());
